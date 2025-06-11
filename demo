@@ -1,0 +1,100 @@
+----> Monolithic Application Deployment Project <----
+
+CREDS ADDING: 
+Dashboard
+Manage Jenkins
+Credentials
+System
+Global credentials (unrestricted)
+Add credentials 
+username & pasword
+
+STEPS FOR PROJECT:
+
+STEP-1: WE CREATE THE CLIENT ACCOUNT IN AWS. [aws orginization]
+
+STEP-2: CREATE THE INFRASTRUCTURE FROM HCP.
+        Link: https://github.com/devopsbyraham/netflixdemoinfra.git
+
+STEP-3: CONFIGURE THE SEVERS [SCRIPTS] [JENKINS, TOMCAT, NEXUS, MONITORING]
+        Link: https://github.com/RAHAMSHAIK007/all-setups.git
+
+SETP-4: WRITE PIPELINE FOR CI/CD.
+        A. Configure Slave (as of now im using app server as slave)
+        B. Download Plugins [pipeline stage view, nexus, Deploy to container, slack] 
+        C. Write Pipeline Code
+           [CODE -- > BUILD -- > TEST -- > SONARQUBE -- > ARTIFACT -- > NEXUS -- > DEPLOY -- > SLACK]
+
+SETP-5: INTEGRATE TO SLACK
+
+STEP-6: MONITOR THE APPLICATION FROM GRAFANA 
+
+TOOLS:
+GIT
+GITHUB
+MAVEN
+JENKINS
+NEXUS
+TOMCAT
+HCP
+TERRAFORM
+SLACK
+PROMETHEUS
+GRAFANA
+
+PIPELINE CODE:
+
+pipeline {
+    agent any
+    
+    stages {
+        stage('code') {
+            steps {
+                git branch: '$branch', url: 'https://github.com/madhunadhgurram/jenkins-java-project.git'
+            }
+        }
+        stage('build') {
+            steps {
+                sh 'mvn compile'
+            }
+        }
+        stage('test') {
+            steps {
+                sh 'mvn test'
+            }
+        }
+        stage('sonarqube') {
+            steps {
+                echo "my code is tested"
+            }
+        }
+        stage('artifact') {
+            steps {
+                sh 'mvn clean package'
+            }
+        }
+        stage('nexus') {
+            steps {
+                echo "my artifact is stored on nexus"
+            }
+        }
+        stage('deploy') {
+            steps {
+                deploy adapters: [ 
+                    tomcat9(credentialsId: '58f21da9-56a6-4d51-8cc9-0e3d4210c49d', path: '', url: 'http://18.232.136.178:8080/')
+                ],
+                contextPath: 'netflix',
+                war: 'target/*.war'
+            }
+        }
+    }
+    post {
+        always {
+            echo "my code deployed"
+        }
+    }
+}
+
+
+NOTE : In Deploy adapters, the url is from application server.
+PATH FOR PROMTHEUS: vim /etc/prometheus/prometheus.yml
