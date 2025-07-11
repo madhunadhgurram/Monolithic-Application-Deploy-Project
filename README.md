@@ -1,13 +1,15 @@
-# Monolithic Application Deployment Project🚀 
+<h1 align="center">
+ Monolithic Application Deployment 🚀
+</h1>
 
-# 🚀 DevOps Monolithic Project – End-to-End CI/CD on AWS
+<p align="center">
+  DevOps Project – End-to-End CI/CD on AWS
+</p>
 
-## 🙏 Introduction
 
-Thank you for giving me the opportunity to explain my project.  
-This is a real-time monolithic application deployment project, implemented with complete DevOps practices using open-source tools and AWS Cloud infrastructure.
+> This is a real-time monolithic application deployment project, implemented with complete DevOps practices using open-source tools and AWS Cloud infrastructure.
 
----
+
 
 ## 🏗️ Architecture Overview
 
@@ -19,10 +21,11 @@ We follow a **3-Tier Architecture** hosted on **AWS Cloud**:
 
 All tiers are isolated using proper VPC, Subnets, Route Tables, and Security Groups.
 
----
+
 
 ## 🔧 Tools & Technologies
 
+  
 | Category               | Tool/Service            |
 |------------------------|-------------------------|
 | Cloud Provider         | AWS                     |
