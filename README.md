@@ -7,9 +7,9 @@
 </p>
 
 
+> The project is designed with industry standards, following best practices for infrastructure provisioning, configuration management, CI/CD, and monitoring.
+
 > This is a real-time monolithic application deployment project, implemented with complete DevOps practices using open-source tools and AWS Cloud infrastructure.
-
-
 
 ## 🏗️ Architecture Overview
 
@@ -38,7 +38,7 @@ All tiers are isolated using proper VPC, Subnets, Route Tables, and Security Gro
 | Monitoring             | Prometheus & Grafana    |
 | Code Quality           | SonarQube               |
 
----
+
 
 ## 📌 Project Flow: End-to-End Lifecycle
 
@@ -60,12 +60,60 @@ All tiers are isolated using proper VPC, Subnets, Route Tables, and Security Gro
   - **Store Artifact**: Save to S3 bucket
   - **Deploy**: Automatically deploy to target EC2 (Dev → Test → UAT → Prod)
 
-```mermaid
-graph LR
-A[Developer Pushes Code] --> B[Jenkins CI/CD Pipeline]
-B --> C[Build & Test]
-C --> D[SonarQube Quality Gate]
-D --> E[Artifact (.war)]
-E --> F[S3 Artifact Storage]
-F --> G[Ansible Deployment]
-G --> H[Target Servers (Tomcat)]
+
+    <details> <summary>Click to Expand Diagram</summary>
+
+    graph TD
+    
+         A[Developer Pushes Code] --> B[Jenkins CI/CD Pipeline]
+    
+         B --> C [Build & Test]
+    
+         C --> D [SonarQube Quality Gate]
+    
+         D --> E [Generate Artifact (.war)]
+    
+         E --> F [Upload to S3 Bucket]
+    
+         F --> G [Deploy using Ansible]
+    
+         G --> H [Tomcat App Server]
+</details>
+
+
+### 4. Verification
+ - Verify application accessibility via ELB DNS.
+
+- Ensure all services like tomcat or httpd are running.
+
+### 5. Monitoring
+
+- Prometheus collects metrics from EC2 and apps.
+
+- Grafana visualizes health dashboards for CPU, memory, and disk usage.
+
+
+
+
+
+
+
+
+
+
+
+## ✅ Conclusion
+
+This project helped me gain strong experience in:
+
+Automating infrastructure with Terraform
+
+Configuring servers using Ansible
+
+Building and deploying apps using Jenkins pipelines
+
+Monitoring infrastructure and services with Grafana/Prometheus
+
+Handling real-world issues and rollback mechanisms
+
+The project demonstrates a real-time DevOps CI/CD lifecycle from scratch to production — infrastructure to monitoring.
