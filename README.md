@@ -127,9 +127,10 @@ All tiers are isolated using proper VPC, Subnets, Route Tables, and Security Gro
 
 #### 🔄 Production Issue Handling
 - Scenario	Action
-     App not working after deploy	Perform rollback from S3
-     App running slow	Auto Scaling / Edge Location
-     App not loading for users	Check Tomcat / HTTPD status
+  
+     * App not working after deploy	- **Perform rollback from S3**
+     * App running slow	- **Auto Scaling / Edge Location**
+     * App not loading for users	- **Check Tomcat / HTTPD status**
 
 
 ## ✅ Conclusion
