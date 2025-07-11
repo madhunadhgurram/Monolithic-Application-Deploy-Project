@@ -95,7 +95,7 @@ All tiers are isolated using proper VPC, Subnets, Route Tables, and Security Gro
 
 ## 🛠️ Common Issues & Resolutions
 
-### 🔴 Pipeline Failures
+#### 🔴 Pipeline Failures
 - Cause: Misconfigurations, missing plugins, wrong credentials.
 
 - Fix:
@@ -106,7 +106,7 @@ All tiers are isolated using proper VPC, Subnets, Route Tables, and Security Gro
 
      Debug dependencies
 
-### ⚠️ Infrastructure Errors
+#### ⚠️ Infrastructure Errors
 
 - Cause: Terraform syntax, module errors, provisioner failures.
 
@@ -116,7 +116,7 @@ All tiers are isolated using proper VPC, Subnets, Route Tables, and Security Gro
 
      Use terraform plan before apply
 
-### ⚠️ Code Failures
+#### ⚠️ Code Failures
 - Cause: SonarQube violations, failed unit tests.
 
 - Fix:
@@ -125,7 +125,7 @@ All tiers are isolated using proper VPC, Subnets, Route Tables, and Security Gro
 
      Share detailed logs with the development team
 
-### 🔄 Production Issue Handling
+#### 🔄 Production Issue Handling
 - Scenario	Action
      App not working after deploy	Perform rollback from S3
      App running slow	Auto Scaling / Edge Location
