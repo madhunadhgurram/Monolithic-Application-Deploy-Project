@@ -101,6 +101,44 @@ All tiers are isolated using proper VPC, Subnets, Route Tables, and Security Gro
 
 
 
+🛠️ Common Issues & Resolutions
+🔴 Pipeline Failures
+Cause: Misconfigurations, missing plugins, wrong credentials.
+
+Fix:
+
+Check Jenkins logs
+
+Validate plugin setup and credentials
+
+Debug dependencies
+
+⚠️ Infrastructure Errors
+Cause: Terraform syntax, module errors, provisioner failures.
+
+Fix:
+
+Review .tf files and module structure
+
+Use terraform plan before apply
+
+⚠️ Code Failures
+Cause: SonarQube violations, failed unit tests.
+
+Fix:
+
+Check SonarQube dashboard
+
+Share detailed logs with the development team
+
+🔄 Production Issue Handling
+Scenario	Action
+App not working after deploy	Perform rollback from S3
+App running slow	Auto Scaling / Edge Location
+App not loading for users	Check Tomcat / HTTPD status
+
+
+
 
 ## ✅ Conclusion
 
