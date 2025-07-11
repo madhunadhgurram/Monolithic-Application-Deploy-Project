@@ -93,65 +93,57 @@ All tiers are isolated using proper VPC, Subnets, Route Tables, and Security Gro
 - Grafana visualizes health dashboards for CPU, memory, and disk usage.
 
 
+## 🛠️ Common Issues & Resolutions
 
+### 🔴 Pipeline Failures
+- Cause: Misconfigurations, missing plugins, wrong credentials.
 
+- Fix:
 
+     Check Jenkins logs
 
+     Validate plugin setup and credentials
 
+     Debug dependencies
 
+### ⚠️ Infrastructure Errors
 
+- Cause: Terraform syntax, module errors, provisioner failures.
 
-🛠️ Common Issues & Resolutions
-🔴 Pipeline Failures
-Cause: Misconfigurations, missing plugins, wrong credentials.
+- Fix:
 
-Fix:
+     Review .tf files and module structure
 
-Check Jenkins logs
+     Use terraform plan before apply
 
-Validate plugin setup and credentials
+### ⚠️ Code Failures
+- Cause: SonarQube violations, failed unit tests.
 
-Debug dependencies
+- Fix:
 
-⚠️ Infrastructure Errors
-Cause: Terraform syntax, module errors, provisioner failures.
+     Check SonarQube dashboard
 
-Fix:
+     Share detailed logs with the development team
 
-Review .tf files and module structure
-
-Use terraform plan before apply
-
-⚠️ Code Failures
-Cause: SonarQube violations, failed unit tests.
-
-Fix:
-
-Check SonarQube dashboard
-
-Share detailed logs with the development team
-
-🔄 Production Issue Handling
-Scenario	Action
-App not working after deploy	Perform rollback from S3
-App running slow	Auto Scaling / Edge Location
-App not loading for users	Check Tomcat / HTTPD status
-
-
+### 🔄 Production Issue Handling
+- Scenario	Action
+     App not working after deploy	Perform rollback from S3
+     App running slow	Auto Scaling / Edge Location
+     App not loading for users	Check Tomcat / HTTPD status
 
 
 ## ✅ Conclusion
 
-This project helped me gain strong experience in:
+- This project helped me gain strong experience in:
 
-Automating infrastructure with Terraform
+- Automating infrastructure with Terraform
 
-Configuring servers using Ansible
+- Configuring servers using Ansible
 
-Building and deploying apps using Jenkins pipelines
+- Building and deploying apps using Jenkins pipelines
 
-Monitoring infrastructure and services with Grafana/Prometheus
+- Monitoring infrastructure and services with Grafana/Prometheus
 
-Handling real-world issues and rollback mechanisms
+- Handling real-world issues and rollback mechanisms
 
-The project demonstrates a real-time DevOps CI/CD lifecycle from scratch to production — infrastructure to monitoring.
+- The project demonstrates a real-time DevOps CI/CD lifecycle from scratch to production — infrastructure to monitoring.
