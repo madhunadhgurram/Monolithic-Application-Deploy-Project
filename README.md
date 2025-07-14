@@ -1,5 +1,3 @@
-Noooo
-
 
 <h1 align="center">
  Monolithic Application Deployment 🚀
