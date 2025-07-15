@@ -149,3 +149,5 @@ All tiers are isolated using proper VPC, Subnets, Route Tables, and Security Gro
 - Handling real-world issues and rollback mechanisms
 
 - The project demonstrates a real-time DevOps CI/CD lifecycle from scratch to production — infrastructure to monitoring.
+
+<img width="1114" height="419" alt="image" src="https://github.com/user-attachments/assets/aee877e7-f665-4510-b2a1-d0d296500ae5" />
