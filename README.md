@@ -1,6 +1,6 @@
 
 <h1 align="center">
- Monolithic Application Deployment 🚀
+ Monolithic Application Deployment 🚀 
 </h1>
 
 <p align="center">
